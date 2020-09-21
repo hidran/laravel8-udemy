@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{name?}/{lastname}', function ($name = '', $lastname = '') {
-    return '<h1> Hello World '.$name.' '.$lastname.'</h1>';
-});
+Route::get('/{name?}/{lastname}/{age?}', function ($name = '', $lastname = '', $age = 0) {
+    return '<h1> Hello World ' . $name . ' ' . $lastname . ' . You are '. $age .' old</h1>';
+})
+    /*->where('name' ,'[a-zA-Z]+')
+    ->where('lastname' ,'[a-zA-Z]+')
+    */
+    ->where([
+        'name' => '[a-zA-Z]+',
+        'lastname' => '[a-zA-Z]+',
+        'age' => '[0-9]{1,3}'
+    ]);;
 Route::get('/users', function () {
     $users = [];
     foreach (range(0, 10) as $index) {
