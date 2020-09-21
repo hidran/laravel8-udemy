@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\{HomeController, WelcomeController};
+Route::get('/', [HomeController::class,'index']);
 
-Route::get('/{name?}/{lastname}/{age?}', function ($name = '', $lastname = '', $age = 0) {
-    return '<h1> Hello World ' . $name . ' ' . $lastname . ' . You are '. $age .' old</h1>';
-})
+
+Route::get('/{name?}/{lastname?}/{age?}', [WelcomeController::class, 'welcome'])
     /*->where('name' ,'[a-zA-Z]+')
     ->where('lastname' ,'[a-zA-Z]+')
     */
