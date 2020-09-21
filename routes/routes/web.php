@@ -13,18 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{name?}/{lastname}', function ($name = '', $lastname = '') {
+    return '<h1> Hello World '.$name.' '.$lastname.'</h1>';
 });
 Route::get('/users', function () {
     $users = [];
-    foreach (range(0,10) as $index){
+    foreach (range(0, 10) as $index) {
         $user = new stdClass();
-        $user->name ='Hidran '.$index;
-        $user->lastName = 'Arias '.$index;
+        $user->name = 'Hidran ' . $index;
+        $user->lastName = 'Arias ' . $index;
         $users[] = $user;
     }
     return $users;
     //return ['John','David'];
-   // return view('users');
+    // return view('users');
 });
