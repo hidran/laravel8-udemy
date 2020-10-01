@@ -16,6 +16,8 @@ use App\Http\Controllers\{HomeController, WelcomeController};
 Route::get('/', [HomeController::class,'index']);
 
 
+
+
 Route::get('/{name?}/{lastname?}/{age?}', [WelcomeController::class, 'welcome'])
     /*->where('name' ,'[a-zA-Z]+')
     ->where('lastname' ,'[a-zA-Z]+')

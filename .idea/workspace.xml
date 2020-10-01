@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +142,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../LINK" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -158,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600644634268</updated>
-      <workItem from="1600644636450" duration="8500000" />
+      <workItem from="1600644636450" duration="10556000" />
     </task>
     <servers />
   </component>
@@ -177,10 +181,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="315" y="135" key="MultipleFileMergeDialog" timestamp="1600653388561">
+    <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1600677974462">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="315" y="135" key="MultipleFileMergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653388561" />
+    <state x="496" y="128" key="FileChooserDialogImpl/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600677974462" />
+    <state x="147" y="69" key="MergeDialog" timestamp="1600653737705">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="69" key="MergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653737705" />
+    <state x="315" y="135" key="MultipleFileMergeDialog" timestamp="1600653740401">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="315" y="135" key="MultipleFileMergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653740401" />
     <state x="407" y="102" key="NewPhpClassDialog" timestamp="1600650221643">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
