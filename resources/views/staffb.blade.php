@@ -18,3 +18,10 @@
     @endif
 
 @endsection
+
+   @section('footer')
+       @parent
+<script>
+    alert('footer')
+</script>
+       @stop
