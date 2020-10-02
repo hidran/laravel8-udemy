@@ -34,7 +34,11 @@ class PageController extends Controller
     {
         // $view = app('view');
         //return $view('about');
-        return view('blog');
+        return view('blog',
+            ['img_url' => 'http://lorempixel.com/400/200',
+                'img_title' =>'Immagine inclusa',
+                'slot' => ''
+            ]);
         // return   View::make('about');
     }
 

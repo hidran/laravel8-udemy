@@ -22,7 +22,11 @@
 
 @endcomponent
 @endsection
+@include('components.card',[
+    'img_title' =>'Image blog include',
+    'img_url' => 'http://lorempixel.com/400/200'
 
+    ] )
 @section('footer')
 @parent
 
