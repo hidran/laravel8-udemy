@@ -1,4 +1,4 @@
-   @extends('templates.layout')
+   @extends('templates.default')
    @section('title', $title)
    @section('content')
     <h1>
