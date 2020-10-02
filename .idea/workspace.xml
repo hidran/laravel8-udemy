@@ -6,9 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_02_171316_create_album_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_02_171316_create_album_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_02_214327_create_photos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_02_214327_create_photos_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +205,7 @@
       <workItem from="1601584685278" duration="23419000" />
       <workItem from="1601657794704" duration="1035000" />
       <workItem from="1601674071335" duration="564000" />
-      <workItem from="1601674863994" duration="1211000" />
+      <workItem from="1601674863994" duration="3507000" />
     </task>
     <servers />
   </component>
@@ -225,6 +225,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="455" y="214" key="#Notifications" timestamp="1601677878359">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="455" y="214" key="#Notifications/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601677878359" />
     <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1601658995399">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
