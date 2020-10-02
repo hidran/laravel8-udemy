@@ -6,6 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +32,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="views" />
-                    <option name="lastUsedInstant" value="1601584768" />
+                    <option name="branchName" value="database" />
+                    <option name="lastUsedInstant" value="1601658246" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1601584767" />
+                    <option name="lastUsedInstant" value="1601657632" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="views" />
+                    <option name="lastUsedInstant" value="1601584768" />
                   </RecentBranch>
                 </list>
               </option>
@@ -46,7 +52,7 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/routes/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/routes/vendor/sebastian/lines-of-code" />
@@ -168,6 +174,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -179,7 +186,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -195,7 +202,10 @@
       <option name="presentableId" value="Default" />
       <updated>1600644634268</updated>
       <workItem from="1600644636450" duration="10556000" />
-      <workItem from="1601584685278" duration="22594000" />
+      <workItem from="1601584685278" duration="23419000" />
+      <workItem from="1601657794704" duration="1035000" />
+      <workItem from="1601674071335" duration="564000" />
+      <workItem from="1601674863994" duration="1211000" />
     </task>
     <servers />
   </component>
@@ -215,10 +225,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1600677974462">
+    <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1601658995399">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="496" y="128" key="FileChooserDialogImpl/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600677974462" />
+    <state x="496" y="128" key="FileChooserDialogImpl/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601658995399" />
     <state x="147" y="69" key="MergeDialog" timestamp="1600653737705">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -235,14 +245,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="556" y="339" key="NewPhpFileDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601644881864" />
-    <state x="-273" y="0" key="SettingsEditor" timestamp="1601629418107">
+    <state x="153" y="0" key="SettingsEditor" timestamp="1601674180204">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="-273" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601629418107" />
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601674180204" />
     <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601647908800">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601647908800" />
+    <state x="341" y="193" key="run.anything.popup" timestamp="1601675436612">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="341" y="193" key="run.anything.popup/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601675436612" />
     <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1601636284153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
