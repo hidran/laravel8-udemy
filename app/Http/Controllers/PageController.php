@@ -56,6 +56,6 @@ class PageController extends Controller
 
         $staff = $this->data;
         $title = 'OUR STAFF';
-        return view('staff', compact('title','staff'));
+        return view('staffb', compact('title','staff'));
     }
 }
