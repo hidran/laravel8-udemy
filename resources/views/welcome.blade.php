@@ -30,7 +30,17 @@
 </div>
 
 <div class="content">
-<x-alert :name="$name" :message="'Hello'" :info="'danger'"/>
+
+    <x-alert class="text-muted"  style="color:red" :name="$name" :message="'Hello'" :info="'danger'" />
+    <x-card>
+        This is a card
+    </x-card>
+
+    <x-alert>
+        @slot('info', 'danger')
+        @slot('name', 'Hidran')
+        @slot('message', 'Be careful with slot')
+    </x-alert>
 </div>
 
 
