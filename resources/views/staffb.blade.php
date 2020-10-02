@@ -1,3 +1,6 @@
+   @extends('templates.layout')
+   @section('title', $title)
+   @section('content')
     <h1>
         With Blade
         {{$title}}
@@ -14,3 +17,4 @@
         </ul>
     @endif
 
+@endsection
