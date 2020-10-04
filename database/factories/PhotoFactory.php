@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\User;
-class AlbumFactory extends Factory
+
+class PhotoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Album::class;
+    protected $model = Photo::class;
 
     /**
      * Define the model's default state.
@@ -22,14 +22,12 @@ class AlbumFactory extends Factory
      */
     public function definition()
     {
-
-        //$user = User::inRandomOrder()->first();
         return [
-            'album_name' => $this->faker->text(20),
-            'album_thumb'=> $this->faker->image(),
-            'description' => $this->faker->text(120),
+            'name' => $this->faker->text(60),
+            'description'=> $this->faker->text(128),
+            'img_path'=> $this->faker->imageUrl(),
             'created_at' => $this->faker->dateTime(),
-            'user_id' => User::factory()
+            'album_id' => \App\Models\Album::factory()
         ];
     }
 }

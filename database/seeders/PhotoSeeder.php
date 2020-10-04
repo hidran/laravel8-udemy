@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Album;
-class AlbumSeeder extends Seeder
+
+class PhotoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,6 @@ class AlbumSeeder extends Seeder
      */
     public function run()
     {
-        Album::truncate();
-       Album::factory(30)->create();
+       \App\Models\Photo::factory(20)->create();
     }
 }
