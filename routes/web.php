@@ -2,12 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Models\User;
+use App\Models\{User, Album};
+
 use App\Http\Controllers\{HomeController, WelcomeController};
 Route::view('/', 'welcome', ['name' => Request::input('name', '')]);
 //Route::get('/', [HomeController::class,'index']);
 Route::get('/users', function () {
-    return  User::paginate(5);
+    return  User::with('albums') ->paginate(80);
+});
+Route::get('/albums', function () {
+    return  Album::paginate(5);
 });
 
 
