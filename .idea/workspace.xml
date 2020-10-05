@@ -8,7 +8,9 @@
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +188,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="zielu.gittoolbox.app.config" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -207,7 +209,8 @@
       <workItem from="1601674071335" duration="564000" />
       <workItem from="1601674863994" duration="4682000" />
       <workItem from="1601823636509" duration="15707000" />
-      <workItem from="1601893519803" duration="8046000" />
+      <workItem from="1601893519803" duration="9745000" />
+      <workItem from="1601918427570" duration="2992000" />
     </task>
     <servers />
   </component>
@@ -251,10 +254,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="556" y="339" key="NewPhpFileDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601906119535" />
-    <state x="153" y="0" key="SettingsEditor" timestamp="1601674180204">
+    <state x="507" y="64" key="RollbackChangesDialog" timestamp="1601939039014">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="153" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601674180204" />
+    <state x="507" y="64" key="RollbackChangesDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601939039014" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1601937463404">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601937463404" />
     <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601647908800">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

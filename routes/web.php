@@ -13,8 +13,9 @@ Route::view('/', 'welcome', ['name' => Request::input('name', '')]);
 Route::get('/users', function () {
     return  User::with('albums') ->paginate(80);
 });
-Route::get('/albums/{album}/delete', [AlbumsController::class, 'delete']);
-Route::resource('/albums', AlbumsController::class);
 
+Route::resource('/albums', AlbumsController::class);
+Route::delete('/albums/{album}', [AlbumsController::class, 'delete']);
+Route::get('/albums/{album}', [AlbumsController::class, 'show']);
 
 

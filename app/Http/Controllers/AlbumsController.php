@@ -57,9 +57,10 @@ class AlbumsController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show( $id)
     {
-        return 'Show';
+        $sql = 'select * FROM albums WHERE id=:id';
+        return  DB::select($sql, ['id' => $id]);
     }
 
     /**
