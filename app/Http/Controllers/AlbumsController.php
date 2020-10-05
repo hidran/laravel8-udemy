@@ -99,7 +99,7 @@ class AlbumsController extends Controller
     public function delete(int $album)
     {
         $sql = 'DELETE FROM albums WHERE id=:id';
-          DB::delete($sql, ['id' => $album]);
-       return   redirect()->back();
+         return  DB::delete($sql, ['id' => $album]);
+      // return   redirect()->back();
     }
 }

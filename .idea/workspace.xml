@@ -6,9 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/albums.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +207,7 @@
       <workItem from="1601674071335" duration="564000" />
       <workItem from="1601674863994" duration="4682000" />
       <workItem from="1601823636509" duration="15707000" />
-      <workItem from="1601893519803" duration="6995000" />
+      <workItem from="1601893519803" duration="8046000" />
     </task>
     <servers />
   </component>
