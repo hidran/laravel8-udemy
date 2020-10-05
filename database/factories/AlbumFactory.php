@@ -28,7 +28,7 @@ class AlbumFactory extends Factory
   ];
         //$user = User::inRandomOrder()->first();
         return [
-            'album_name' => $this->faker->text(20),
+            'album_name' => $this->faker->text(60),
             'album_thumb'=> $this->faker->imageUrl(640,480,
                 $this->faker->randomElement($cats))
             ,

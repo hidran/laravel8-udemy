@@ -13,7 +13,7 @@ class AlbumSeeder extends Seeder
      */
     public function run()
     {
-        Album::truncate();
+
        Album::factory(30)->create();
     }
 }
