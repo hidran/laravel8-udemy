@@ -15,20 +15,18 @@ class AlbumsController extends Controller
      */
     public function index(Request $request)
     {
-        $sql ='select * from albums';
-        $where ='1=1';
+        $sql ='select * from albums WHERE 1=1 ';
+        $where =[];
         if($request->has('id')){
-            $where .= ' AND  id='.(int)$request->get('id');
-
+            $where['id'] = $request->get('id');
+            $sql .= " AND ID=:id" ;
         }
         if($request->has('album_name')){
-            $where.= " AND album_name='".$request->get('album_name')."'";
-
+            $where['album_name'] = $request->get('album_name');
+            $sql .= " AND album_name=:album_name" ;
         }
-
-        $sql.= ' WHERE '.$where;
-        return DB::select($sql);
-
+  //dd($sql);
+        return  DB::select($sql, $where);
     }
 
     /**
