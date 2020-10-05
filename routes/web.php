@@ -11,7 +11,7 @@ Route::get('/users', function () {
     return  User::with('albums') ->paginate(80);
 });
 Route::get('/albums', function () {
-    return  Album::paginate(5);
+    return  Album::with('photos')->paginate(5);
 });
 
 

@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Seeders\UserSeeder;
+use App\Models\{User, Photo, Album};
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,7 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        \DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Photo::truncate();
+        Album::truncate();
+        User::truncate();
+  User::factory(40)->has(
+       Album::factory(10)->has(
+           Photo::factory(20)
+       )
+  )->create();
+/*
         $this->call(UserSeeder::class);
+        $this->call(AlbumSeeder::class);
+        $this->call(PhotoSeeder::class);
+*/
     }
 }

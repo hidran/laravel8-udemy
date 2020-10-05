@@ -22,11 +22,16 @@ class PhotoFactory extends Factory
      */
     public function definition()
     {
+        $cats = [
+
+            'abstract','animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics','transport'
+        ];
         return [
             'name' => $this->faker->text(60),
             'description'=> $this->faker->text(128),
-            'img_path'=> $this->faker->imageUrl(),
-            'created_at' => $this->faker->dateTime(),
+            'img_path'=>  $this->faker->imageUrl(640,480,
+                $this->faker->randomElement($cats)),
+
             'album_id' => \App\Models\Album::factory()
         ];
     }

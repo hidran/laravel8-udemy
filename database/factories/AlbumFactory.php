@@ -22,13 +22,18 @@ class AlbumFactory extends Factory
      */
     public function definition()
     {
+  $cats = [
 
+      'abstract','animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics','transport'
+  ];
         //$user = User::inRandomOrder()->first();
         return [
             'album_name' => $this->faker->text(20),
-            'album_thumb'=> $this->faker->image(),
+            'album_thumb'=> $this->faker->imageUrl(640,480,
+                $this->faker->randomElement($cats))
+            ,
             'description' => $this->faker->text(120),
-            'created_at' => $this->faker->dateTime(),
+
             'user_id' => User::factory()
         ];
     }
