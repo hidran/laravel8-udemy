@@ -36,7 +36,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -58,7 +58,7 @@ class AlbumsController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return 'Show';
     }
 
     /**
@@ -90,8 +90,14 @@ class AlbumsController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Album $album)
+    public function destroy(int $album)
     {
-        //
+        $sql = 'DELETE FROM albums WHERE id=:id';
+       return  DB::delete($sql, ['id' => $album]);
+    }
+    public function delete(int $album)
+    {
+        $sql = 'DELETE FROM albums WHERE id=:id';
+        return  DB::delete($sql, ['id' => $album]);
     }
 }

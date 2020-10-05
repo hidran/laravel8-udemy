@@ -13,7 +13,8 @@ Route::view('/', 'welcome', ['name' => Request::input('name', '')]);
 Route::get('/users', function () {
     return  User::with('albums') ->paginate(80);
 });
-Route::get('/albums', [AlbumsController::class ,'index']);
+Route::get('/albums/{album}/delete', [AlbumsController::class, 'delete']);
+Route::resource('/albums', AlbumsController::class);
 
 
 
