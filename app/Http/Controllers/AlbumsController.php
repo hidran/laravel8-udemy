@@ -89,7 +89,10 @@ class AlbumsController extends Controller
       $data = $request->only(['name','description']);
       $data['id'] = $id;
       $sql = 'UPDATE albums set album_name=:name, description=:description where id=:id';
-  return  DB::update($sql, $data);
+  $res =  DB::update($sql, $data);
+        $messaggio = $res ? 'Album   ' . $id . ' Updated' : 'Album ' .  $id . ' was not updated';
+        session()->flash('message', $messaggio);
+        return redirect()->route('albums.index');
     }
 
     /**
