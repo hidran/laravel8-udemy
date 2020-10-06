@@ -7,7 +7,10 @@
         @foreach($albums as $album)
             <li class="list-group-item d-flex justify-content-between">
                 ({{$album->id}})  {{$album->album_name}}
+                <div>
+                <a href="/albums/{{$album->id}}/edit" class="btn btn-primary">UPDATE</a>
                 <a href="/albums/{{$album->id}}" class="btn btn-danger">DELETE</a>
+                </div>
             </li>
         @endforeach
     </ul>
@@ -17,7 +20,7 @@
     @parent
     <script>
         $('document').ready(function () {
-            $('ul').on('click', 'a',function (ele) {
+            $('ul').on('click', 'a.btn-danger',function (ele) {
                 ele.preventDefault();
 
                 var urlAlbum =   $(this).attr('href');

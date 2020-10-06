@@ -27,7 +27,7 @@ class AlbumsController extends Controller
         }
   //dd($sql);
         $albums =   DB::select($sql, $where);
-        return view('albums', ['albums' => $albums]);
+        return view('albums.albums', ['albums' => $albums]);
     }
 
     /**
@@ -69,10 +69,13 @@ class AlbumsController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit(Album $album)
+    public function edit( $id )
     {
-        //
-    }
+        $sql = 'select album_name, description,id from albums where id =:id ';
+        $album = DB::select($sql, ['id' => $id]);
+       // dd($album);
+        return view('albums.editalbum')->withAlbum($album[0]);
+     }
 
     /**
      * Update the specified resource in storage.
