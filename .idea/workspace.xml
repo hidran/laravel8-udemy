@@ -6,10 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/albums/editalbum.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/albums/editalbum.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/editalbum.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +176,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -210,7 +213,7 @@
       <workItem from="1601674863994" duration="4682000" />
       <workItem from="1601823636509" duration="15707000" />
       <workItem from="1601893519803" duration="9745000" />
-      <workItem from="1601918427570" duration="6044000" />
+      <workItem from="1601918427570" duration="10787000" />
     </task>
     <servers />
   </component>
@@ -234,6 +237,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="455" y="214" key="#Notifications/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601677878359" />
+    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601993016347">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601993016347" />
     <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1601658995399">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

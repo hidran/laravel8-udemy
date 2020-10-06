@@ -48,7 +48,7 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -69,7 +69,7 @@ class AlbumsController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id )
+    public function edit(int $id)
     {
         $sql = 'select album_name, description,id from albums where id =:id ';
         $album = DB::select($sql, ['id' => $id]);
@@ -84,9 +84,12 @@ class AlbumsController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Album $album)
+    public function update(Request $request, $id)
     {
-        //
+      $data = $request->only(['name','description']);
+      $data['id'] = $id;
+      $sql = 'UPDATE albums set album_name=:name, description=:description where id=:id';
+  return  DB::update($sql, $data);
     }
 
     /**

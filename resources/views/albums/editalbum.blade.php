@@ -1,7 +1,9 @@
 @extends('templates.default')
 @section('content')
     <h1>Edit Album</h1>
-    <form>
+    <form action="{{route('albums.update',['album' => $album->id])}}" method="POST">
+        @csrf
+        @method('PATCH')
          <input type="hidden" name="_method" value="PATCH">
         <div class="form-group">
             <label for="">Name</label>
