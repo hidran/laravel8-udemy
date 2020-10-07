@@ -37,7 +37,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-
+return view('albums.createalbum');
     }
 
     /**
@@ -48,7 +48,17 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
+        $data = request()->only(['name','description']);
+        $data['user_id'] = 1;
+        // da aggiungere se c'è già la colonna album_thumb nella tabella
+        $data['album_thumb'] = '/';
 
+        $sql = 'INSERT INTO  albums (album_name, description, user_id,album_thumb) ';
+        $sql .=' VALUES(:name,:description, :user_id, :album_thumb) ';
+        $res =  DB::insert($sql, $data);
+        $messaggio = $res ? 'Album   '.$data['name']. ' Created': 'Album '.$data['name']. ' was not crerated';
+        session()->flash('message', $messaggio);
+        return  redirect()->route('albums.index');
     }
 
     /**
