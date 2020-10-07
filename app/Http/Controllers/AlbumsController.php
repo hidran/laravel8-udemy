@@ -25,6 +25,7 @@ class AlbumsController extends Controller
             $where['album_name'] = $request->get('album_name');
             $sql .= " AND album_name=:album_name" ;
         }
+        $sql .= 'ORDER BY id DESC';
   //dd($sql);
         $albums =   DB::select($sql, $where);
         return view('albums.albums', ['albums' => $albums]);
