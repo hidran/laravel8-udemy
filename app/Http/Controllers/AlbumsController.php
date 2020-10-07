@@ -114,10 +114,10 @@ return view('albums.createalbum');
         $sql = 'DELETE FROM albums WHERE id=:id';
        return  DB::delete($sql, ['id' => $album]);
     }
-    public function delete(int $album)
+    public function delete(int $id)
     {
-        $sql = 'DELETE FROM albums WHERE id=:id';
-         return  DB::delete($sql, ['id' => $album]);
-      // return   redirect()->back();
+        $res = DB::table('albums')->where('id', $id)->delete();
+
+        return $res;
     }
 }
