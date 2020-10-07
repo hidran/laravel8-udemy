@@ -46,16 +46,17 @@ return view('albums.createalbum');
      */
     public function store(Request $request)
     {
-        $data = request()->only(['name','description']);
-        $data['user_id'] = 1;
-        // da aggiungere se c'è già la colonna album_thumb nella tabella
-        $data['album_thumb'] = '/';
-
-        $sql = 'INSERT INTO  albums (album_name, description, user_id,album_thumb) ';
-        $sql .=' VALUES(:name,:description, :user_id, :album_thumb) ';
-        $res =  DB::insert($sql, $data);
-        $messaggio = $res ? 'Album   '.$data['name']. ' Created': 'Album '.$data['name']. ' was not crerated';
-        session()->flash('message', $messaggio);
+        $res = DB::table('albums')->insert(
+            [  [
+                'album_name' => request()->input('name'),
+                'album_thumb' => '/',
+                'description' => request()->input('description'),
+                'user_id' => 1
+            ]
+            ]
+        );
+        $name =  request()->input('name');
+        $messaggio = $res ? 'Album   ' . $name . ' Created' : 'Album ' . $name. ' was not crerated';
         return  redirect()->route('albums.index');
     }
 
@@ -94,11 +95,12 @@ return view('albums.createalbum');
      */
     public function update(Request $request, $id)
     {
-      $data = $request->only(['name','description']);
-      $data['id'] = $id;
-      $sql = 'UPDATE albums set album_name=:name, description=:description where id=:id';
-  $res =  DB::update($sql, $data);
-        $messaggio = $res ? 'Album   ' . $id . ' Updated' : 'Album ' .  $id . ' was not updated';
+        $res = DB::table('albums')->where('id', $id)->update(
+            ['album_name' => request()->input('name'),
+                'description' => request()->input('description')
+            ]
+        );
+        $messaggio = $res ? 'Album con id = ' . $id . ' Aggiornato' : 'Album ' . $id . ' Non aggiornato';
         session()->flash('message', $messaggio);
         return redirect()->route('albums.index');
     }
