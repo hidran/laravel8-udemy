@@ -55,10 +55,10 @@ class AlbumsController extends Controller
         $album->description = request()->input('description');
         $album->user_id = 1;
         $res = $album->save();
-        if($res) {
-           if( $this->processFile($album->id, $request, $album)){
-               $album->save();
-           }
+        if ($res) {
+            if ($this->processFile($album->id, $request, $album)) {
+                $album->save();
+            }
         }
 
         $name = request()->input('name');
@@ -105,7 +105,7 @@ class AlbumsController extends Controller
         $album->album_name = $req->input('name');
         $album->description = $req->input('description');
         $album->user_id = 1;
-        $this->processFile($id,$req,  $album);
+        $this->processFile($id, $req, $album);
 
         $res = $album->save();
         $messaggio = $res ? 'Album con id = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
@@ -125,12 +125,15 @@ class AlbumsController extends Controller
         return DB::delete($sql, ['id' => $album]);
     }
 
-    public function delete(int $id)
+    public function delete(Album $album)
     {
-        //$res = Album::where('id', $id)->delete();
+        $thumbNail = $album->album_thumb;
+       $res = $album->delete();
+        if($res && $thumbNail && \Storage::exists($thumbNail)){
+            \Storage::delete($thumbNail);
+        }
+         return $res;
 
-        // return $res;
-        return Album::destroy($id);
     }
 
     /**
@@ -138,21 +141,21 @@ class AlbumsController extends Controller
      * @param $id
      * @param $album
      */
-    private function processFile($id, Request $req,  $album): bool
+    private function processFile($id, Request $req, $album): bool
     {
 
-        if(!$req->hasFile('album_thumb')){
+        if (!$req->hasFile('album_thumb')) {
             return false;
         }
         $file = $req->file('album_thumb');
-        if(!$file->isValid()){
+        if (!$file->isValid()) {
             return false;
         }
 
 
-            $filename = $id . '.' . $file->extension();
-            $filename = $file->storeAs(env('IMG_DIR'), $filename);
-            $album->album_thumb = $filename;
-       return true;
+        $filename = $id . '.' . $file->extension();
+        $filename = $file->storeAs(env('IMG_DIR'), $filename);
+        $album->album_thumb = $filename;
+        return true;
     }
 }
