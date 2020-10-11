@@ -6,9 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/albums/editalbum.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/editalbum.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -216,7 +219,8 @@
       <workItem from="1601893519803" duration="9745000" />
       <workItem from="1601918427570" duration="15781000" />
       <workItem from="1602085803575" duration="4468000" />
-      <workItem from="1602428314864" duration="6176000" />
+      <workItem from="1602428314864" duration="7163000" />
+      <workItem from="1602449342211" duration="2685000" />
     </task>
     <servers />
   </component>
@@ -244,6 +248,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601993016347" />
+    <state x="446" y="155" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602448919172">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="446" y="155" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602448919172" />
     <state x="93" y="107" width="1336" height="664" key="DiffContextDialog" timestamp="1602090933621">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -272,10 +280,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="507" y="64" key="RollbackChangesDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601939039014" />
-    <state x="153" y="0" key="SettingsEditor" timestamp="1602001049300">
+    <state x="162" y="0" key="SettingsEditor" timestamp="1602450266738">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="153" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602001049300" />
+    <state x="162" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602450266738" />
     <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601647908800">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
