@@ -12,7 +12,7 @@
             <li class="list-group-item d-flex justify-content-between">
                 ({{$album->id}})  {{$album->album_name}}
                 @if($album->album_thumb)
-                    <img width="300" src="{{$album->album_thumb}}" title="{{$album->album_name}}" alt="{{$album->album_name}}">
+                    <img width="300" src="{{asset($album->path)}}" title="{{$album->album_name}}" alt="{{$album->album_name}}">
 
                 @endif
                 <div>

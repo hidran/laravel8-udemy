@@ -11,6 +11,22 @@ class Album extends Model
  //protected $table = 'albums';
  //protected $primaryKey ='id';
     protected $fillable = ['album_name','description','album_thumb','user_id'];
+   public function getPathAttribute()
+   {
+       $url = $this->album_thumb;
+       if(stristr($this->album_thumb, 'http') === false){
+           $url = 'storage/'.$url;
+       }
+       return $url;
+   }
+
+
+
+
+
+
+
+
     public function photos()
     {
         return $this->hasMany(Photo::class);
