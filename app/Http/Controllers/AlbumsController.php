@@ -36,7 +36,8 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        return view('albums.createalbum');
+        $album = new Album();
+        return view('albums.createalbum', ['album' => $album]);
     }
 
     /**
@@ -47,21 +48,19 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-        /* $res = Album::create(
-              [
-                 'album_name' => request()->input('name'),
-                 'album_thumb' => '/',
-                 'description' => request()->input('description'),
-                 'user_id' => 1
-             ]
 
-         );*/
         $album = new Album();
         $album->album_name = request()->input('name');
         $album->album_thumb = '/';
         $album->description = request()->input('description');
         $album->user_id = 1;
         $res = $album->save();
+        if($res) {
+           if( $this->processFile($album->id, $request, $album)){
+               $album->save();
+           }
+        }
+
         $name = request()->input('name');
         $messaggio = $res ? 'Album   ' . $name . ' Created' : 'Album ' . $name . ' was not crerated';
         return redirect()->route('albums.index');
@@ -106,12 +105,7 @@ class AlbumsController extends Controller
         $album->album_name = $req->input('name');
         $album->description = $req->input('description');
         $album->user_id = 1;
-        if($req->hasFile('album_thumb')){
-            $file = $req->file('album_thumb');
-            $filename = $id.'.'.$file->extension();
-           $filename = $file->storeAs(env('IMG_DIR'), $filename);
-            $album->album_thumb = $filename;
-        }
+        $this->processFile($id,$req,  $album);
 
         $res = $album->save();
         $messaggio = $res ? 'Album con id = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
@@ -137,5 +131,28 @@ class AlbumsController extends Controller
 
         // return $res;
         return Album::destroy($id);
+    }
+
+    /**
+     * @param Request $req
+     * @param $id
+     * @param $album
+     */
+    private function processFile($id, Request $req,  $album): bool
+    {
+
+        if(!$req->hasFile('album_thumb')){
+            return false;
+        }
+        $file = $req->file('album_thumb');
+        if(!$file->isValid()){
+            return false;
+        }
+
+
+            $filename = $id . '.' . $file->extension();
+            $filename = $file->storeAs(env('IMG_DIR'), $filename);
+            $album->album_thumb = $filename;
+       return true;
     }
 }

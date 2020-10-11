@@ -2,7 +2,7 @@
 @section('content')
     <h1>New Album</h1>
 
-    <form action="{{route('albums.store')}}" method="POST">
+    <form action="{{route('albums.store')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
 
         <div class="form-group">
@@ -10,7 +10,7 @@
             <input type="text" required name="name" id="name" class="form-control" value="{{old('name')}}" placeholder="Album name">
 
         </div>
-
+@include('albums.partials.fileupload')
         <div class="form-group">
             <label for="">Description</label>
             <textarea  name="description" id="description" class="form-control" placeholder="Album description">{{old('description')}}</textarea>
