@@ -46,7 +46,7 @@ return view('albums.createalbum');
      */
     public function store(Request $request)
     {
-        $res = DB::table('albums')->insert(
+        $res = Album::insert(
             [  [
                 'album_name' => request()->input('name'),
                 'album_thumb' => '/',
@@ -95,7 +95,7 @@ return view('albums.createalbum');
      */
     public function update(Request $request, $id)
     {
-        $res = DB::table('albums')->where('id', $id)->update(
+        $res = Album::where('id', $id)->update(
             ['album_name' => request()->input('name'),
                 'description' => request()->input('description')
             ]
@@ -118,8 +118,9 @@ return view('albums.createalbum');
     }
     public function delete(int $id)
     {
-        $res = DB::table('albums')->where('id', $id)->delete();
+        //$res = Album::where('id', $id)->delete();
 
-        return $res;
+       // return $res;
+        return Album::destroy($id);
     }
 }
