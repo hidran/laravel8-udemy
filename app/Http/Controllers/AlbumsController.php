@@ -46,15 +46,21 @@ return view('albums.createalbum');
      */
     public function store(Request $request)
     {
-        $res = Album::insert(
-            [  [
+       /* $res = Album::create(
+             [
                 'album_name' => request()->input('name'),
                 'album_thumb' => '/',
                 'description' => request()->input('description'),
                 'user_id' => 1
             ]
-            ]
-        );
+
+        );*/
+        $album = new Album();
+      $album->album_name = request()->input('name');
+      $album->album_thumb = '/';
+      $album->description = request()->input('description');
+      $album->user_id = 1;
+      $res = $album->save();
         $name =  request()->input('name');
         $messaggio = $res ? 'Album   ' . $name . ' Created' : 'Album ' . $name. ' was not crerated';
         return  redirect()->route('albums.index');
@@ -80,10 +86,10 @@ return view('albums.createalbum');
      */
     public function edit(int $id)
     {
-        $sql = 'select album_name, description,id from albums where id =:id ';
-        $album = DB::select($sql, ['id' => $id]);
+     //   $sql = 'select album_name, description,id from albums where id =:id ';
+        $album = Album::find($id);
        // dd($album);
-        return view('albums.editalbum')->withAlbum($album[0]);
+        return view('albums.editalbum')->withAlbum($album);
      }
 
     /**
