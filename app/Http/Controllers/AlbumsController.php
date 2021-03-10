@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 use DB;
 
@@ -157,5 +158,9 @@ class AlbumsController extends Controller
         $filename = $file->storeAs(env('IMG_DIR'), $filename);
         $album->album_thumb = $filename;
         return true;
+    }
+    public function getImages( Album $album){
+       return Photo::wherealbumId($album->id)->get();
+
     }
 }

@@ -6,7 +6,7 @@
         <x-alert-info>{{ session()->get('message') }}</x-alert-info>
     @endif
    <form>
-       <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
+       @csrf
     <ul class="list-group">
         @foreach($albums as $album)
             <li class="list-group-item d-flex justify-content-between">
@@ -16,7 +16,8 @@
 
                 @endif
                 <div>
-                <a href="/albums/{{$album->id}}/edit" class="btn btn-primary">UPDATE</a>
+                    <a href="{{route('albums.images',$album)}}" class="btn btn-primary">VIEW IMAGES</a>
+                <a href="{{route('albums.edit',$album)}}" class="btn btn-primary">UPDATE</a>
                 <a href="/albums/{{$album->id}}" class="btn btn-danger">DELETE</a>
                 </div>
             </li>

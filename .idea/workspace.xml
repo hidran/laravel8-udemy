@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand />
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
+    <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="imports stockbase and passes codmarket parameter">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +28,33 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/routes/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="Cvs2Configuration">
+    <option name="OVERRIDE_EXISTING_TAG_FOR_PROJECT" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Php trait" />
+        <option value="Php trait2" />
+        <option value="Laravel controller" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -55,7 +90,7 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8">
     <include_path>
       <path value="$PROJECT_DIR$/routes/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/routes/vendor/sebastian/lines-of-code" />
@@ -167,19 +202,23 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hnQxteDQ9wLAA4ZdXRvUq0Kexf" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.data.extractors.current.export.id" value="JSON-Groovy.json.groovy" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -190,7 +229,9 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -200,6 +241,11 @@
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="SSH_CONFIG" />
+    <option name="myConnectionId" value="svil" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="" />
@@ -218,7 +264,29 @@
       <workItem from="1602085803575" duration="4468000" />
       <workItem from="1602428314864" duration="7163000" />
       <workItem from="1602449342211" duration="6620000" />
+      <workItem from="1605171557320" duration="14155000" />
+      <workItem from="1611498130042" duration="167000" />
+      <workItem from="1611498321561" duration="10746000" />
+      <workItem from="1611574082237" duration="2085000" />
+      <workItem from="1611784302862" duration="170000" />
+      <workItem from="1611784610488" duration="66000" />
+      <workItem from="1611784743977" duration="2274000" />
+      <workItem from="1613032818364" duration="1167000" />
+      <workItem from="1613597824125" duration="4882000" />
+      <workItem from="1613640172874" duration="93000" />
+      <workItem from="1613640277476" duration="2574000" />
+      <workItem from="1615330957814" duration="1669000" />
+      <workItem from="1615332917064" duration="1148000" />
+      <workItem from="1615334810893" duration="791000" />
     </task>
+    <task id="LOCAL-00001" summary="imports stockbase and passes codmarket parameter">
+      <created>1605200301112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605200301112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,66 +304,13 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="455" y="214" key="#Notifications" timestamp="1601677878359">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="455" y="214" key="#Notifications/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601677878359" />
-    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601993016347">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601993016347" />
-    <state x="446" y="155" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602448919172">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="446" y="155" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602448919172" />
-    <state x="537" y="180" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1602454214840">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="537" y="180" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602454214840" />
-    <state x="93" y="107" width="1336" height="664" key="DiffContextDialog" timestamp="1602090933621">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="93" y="107" width="1336" height="664" key="DiffContextDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602090933621" />
-    <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1601658995399">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="496" y="128" key="FileChooserDialogImpl/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601658995399" />
-    <state x="147" y="69" key="MergeDialog" timestamp="1600653737705">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="147" y="69" key="MergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653737705" />
-    <state x="315" y="135" key="MultipleFileMergeDialog" timestamp="1600653740401">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="315" y="135" key="MultipleFileMergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653740401" />
-    <state x="407" y="102" key="NewPhpClassDialog" timestamp="1600650221643">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="407" y="102" key="NewPhpClassDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600650221643" />
-    <state x="556" y="339" key="NewPhpFileDialog" timestamp="1602453953197">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="556" y="339" key="NewPhpFileDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602453953197" />
-    <state x="507" y="64" key="RollbackChangesDialog" timestamp="1601939039014">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="507" y="64" key="RollbackChangesDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601939039014" />
-    <state x="162" y="0" key="SettingsEditor" timestamp="1602450266738">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="162" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602450266738" />
-    <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601647908800">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601647908800" />
-    <state x="341" y="193" key="run.anything.popup" timestamp="1601675436612">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="341" y="193" key="run.anything.popup/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601675436612" />
-    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1601850108280">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601850108280" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Verifica che le promo a stock , se sono AGEDSTOCK, che anche il veicolo sia flaggato come OLDERSTOCK" />
+    <MESSAGE value="imports stockbase and passes codmarket parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="imports stockbase and passes codmarket parameter" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
