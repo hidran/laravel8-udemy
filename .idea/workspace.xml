@@ -1,55 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85d7f7eb-9dde-454b-bcbd-50d5a34c32f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/cacke.36-gBQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/corsophp.1jf55A.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/diary.w2OyBQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/drup8.r8W2BQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/forge.Z4vRBQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/lara.ZJIyAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/lara8.VLofBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/lara81.XZDXvQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laraapi7.wYlIpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laraproject.NQCrsA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laraproject2.nQa1ZA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laravel.uWob_Q.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laravel7.nuxRpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/laravel8.n-xRpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/myphp7.a9XdwA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/php741.fBAMxQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/springboot.f24xUQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/test.kkQ2AA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/test7.5U2SBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/test8.5k2SBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/test8l.Rm-3yw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/tsy7.nXk2AA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/wp.2Q4AAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/12de28a2-a815-4a68-b788-1c1e387858e7/storage_v2/_src_/schema/xdebug.2yB20g.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel8-udemy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/magento2plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Album.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="85d7f7eb-9dde-454b-bcbd-50d5a34c32f1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615676764330</updated>
-      <workItem from="1615676766616" duration="891000" />
+      <workItem from="1615676766616" duration="1466000" />
     </task>
     <servers />
   </component>
