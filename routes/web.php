@@ -12,6 +12,6 @@ use App\Http\Controllers\
 
 Route::resource('/albums', AlbumsController::class);
 Route::get('/albums/{album}/images', [AlbumsController::class,'getImages'])->name('albums.images');
-Route::delete('/albums/{album}', [AlbumsController::class, 'delete']);
+
 
 

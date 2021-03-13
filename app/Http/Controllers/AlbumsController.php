@@ -19,14 +19,17 @@ class AlbumsController extends Controller
     {
 
 
-        $queryBuilder = Album::orderBy('id', 'DESC');
+        $queryBuilder = Album::orderBy('id', 'DESC')
+            ->withCount('photos');
         if ($request->has('id')) {
             $queryBuilder->where('id', '=', $request->input('id'));
         }
         if ($request->has('album_name')) {
             $queryBuilder->where('album_name', 'like', $request->input('album_name') . '%');
         }
+
         $albums = $queryBuilder->get();
+
         return view('albums.albums', ['albums' => $albums]);
     }
 
@@ -73,10 +76,9 @@ class AlbumsController extends Controller
      * @param \App\Models\Album $album
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Album $album)
     {
-        $sql = 'select * FROM albums WHERE id=:id';
-        return DB::select($sql, ['id' => $id]);
+      return $album;
     }
 
     /**
@@ -85,12 +87,9 @@ class AlbumsController extends Controller
      * @param \App\Models\Album $album
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit(Album $album)
     {
-        //   $sql = 'select album_name, description,id from albums where id =:id ';
-        $album = Album::find($id);
-        // dd($album);
-        return view('albums.editalbum')->withAlbum($album);
+          return view('albums.editalbum')->withAlbum($album);
     }
 
     /**
@@ -109,7 +108,7 @@ class AlbumsController extends Controller
         $this->processFile($id, $req, $album);
 
         $res = $album->save();
-        $messaggio = $res ? 'Album con id = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
+        $messaggio = $res ? 'Album con nome = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
         session()->flash('message', $messaggio);
         return redirect()->route('albums.index');
     }
@@ -120,13 +119,9 @@ class AlbumsController extends Controller
      * @param \App\Models\Album $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(int $album)
-    {
-        $sql = 'DELETE FROM albums WHERE id=:id';
-        return DB::delete($sql, ['id' => $album]);
-    }
 
-    public function delete(Album $album)
+
+    public function destroy(Album $album)
     {
         $thumbNail = $album->album_thumb;
        $res = $album->delete();
@@ -148,6 +143,7 @@ class AlbumsController extends Controller
         if (!$req->hasFile('album_thumb')) {
             return false;
         }
+
         $file = $req->file('album_thumb');
         if (!$file->isValid()) {
             return false;
@@ -160,6 +156,7 @@ class AlbumsController extends Controller
         return true;
     }
     public function getImages( Album $album){
+
        return Photo::wherealbumId($album->id)->get();
 
     }

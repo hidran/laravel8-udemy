@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../corsolaravel8/.idea/corsolaravel8.iml" filepath="$PROJECT_DIR$/../corsolaravel8/.idea/corsolaravel8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/laravel8-udemy.iml" filepath="$PROJECT_DIR$/.idea/laravel8-udemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/corso-laravel8.iml" filepath="$PROJECT_DIR$/.idea/corso-laravel8.iml" />
     </modules>
   </component>
 </project>
