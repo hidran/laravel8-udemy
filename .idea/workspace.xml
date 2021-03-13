@@ -6,7 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b959af2-3759-43c6-a702-b905102ec3fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel8-udemy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel8-udemy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,8 +195,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\LARAVEL8\corso-laravel8" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\LARAVEL8\laravel8-udemy\resources\views\albums" />
       <recent name="D:\PROJECTS\LARAVEL8\laravel8-udemy\resources\views\templates" />
@@ -211,6 +224,7 @@
       <workItem from="1601918427570" duration="15781000" />
       <workItem from="1602085803575" duration="4468000" />
       <workItem from="1602428314864" duration="4831000" />
+      <workItem from="1615593628984" duration="1884000" />
     </task>
     <servers />
   </component>
@@ -228,59 +242,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="455" y="214" key="#Notifications" timestamp="1601677878359">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="455" y="214" key="#Notifications/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601677878359" />
-    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601993016347">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="311" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601993016347" />
-    <state x="93" y="107" width="1336" height="664" key="DiffContextDialog" timestamp="1602090933621">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="93" y="107" width="1336" height="664" key="DiffContextDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602090933621" />
-    <state x="496" y="128" key="FileChooserDialogImpl" timestamp="1601658995399">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="496" y="128" key="FileChooserDialogImpl/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601658995399" />
-    <state x="147" y="69" key="MergeDialog" timestamp="1600653737705">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="147" y="69" key="MergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653737705" />
-    <state x="315" y="135" key="MultipleFileMergeDialog" timestamp="1600653740401">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="315" y="135" key="MultipleFileMergeDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600653740401" />
-    <state x="407" y="102" key="NewPhpClassDialog" timestamp="1600650221643">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="407" y="102" key="NewPhpClassDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1600650221643" />
-    <state x="556" y="339" key="NewPhpFileDialog" timestamp="1602001781137">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="556" y="339" key="NewPhpFileDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602001781137" />
-    <state x="507" y="64" key="RollbackChangesDialog" timestamp="1601939039014">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="507" y="64" key="RollbackChangesDialog/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601939039014" />
-    <state x="153" y="0" key="SettingsEditor" timestamp="1602001049300">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="153" y="0" key="SettingsEditor/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1602001049300" />
-    <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601647908800">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="540" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601647908800" />
-    <state x="341" y="193" key="run.anything.popup" timestamp="1601675436612">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="341" y="193" key="run.anything.popup/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601675436612" />
-    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1601850108280">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup/0.0.1536.864/1920.0.2560.1440@0.0.1536.864" timestamp="1601850108280" />
   </component>
 </project>

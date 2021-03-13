@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-   public function welcome($name = '', $lastname = '', $age = 0, Request $req ) {
+   public function welcome($name = '', $lastname = '', $age = 0, Request $req = null ) {
           $lang = $req->lang;
 
           switch ($lang){
