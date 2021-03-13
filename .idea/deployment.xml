@@ -13,7 +13,6 @@
       <paths name="svil">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$/../../../LINK/tassatore-master" web="/" />
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>

@@ -115,6 +115,7 @@
       <excludeFolder url="file://$MODULE_DIR$/routes/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/routes/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/routes/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
