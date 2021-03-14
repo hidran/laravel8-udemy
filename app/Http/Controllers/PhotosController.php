@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use  Storage;
@@ -22,9 +23,11 @@ class PhotosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $album = $req->album_id? Album::findOrFail($req->album_id): new Album();
+        $photo = new Photo();
+       return view('images.editimage', compact('album','photo'));
     }
 
     /**
@@ -35,7 +38,7 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
