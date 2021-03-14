@@ -15,7 +15,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -38,7 +38,15 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
+        $photo = new Photo();
+        $photo->name = $request->input('name');
+        $photo->description = $request->input('description');
+        $photo->album_id = $request->input('album_id');
 
+
+        $this->processFile($photo);
+        $photo->save();
+        return redirect(route('albums.images',$photo->album_id));
     }
 
     /**
@@ -108,8 +116,9 @@ class PhotosController extends Controller
         if(!$file->isValid()){
             return false;
         }
-        //$fileName = $file->store(env('ALBUM_THUMB_DIR'));
-        $fileName = $photo->id . '.' . $file->extension();
+        $imgName = preg_replace('@[a-z0-9]i@','_', $photo->name);
+
+        $fileName = $imgName. '.' . $file->extension();
         $file->storeAs(env('IMG_DIR').'/'.$photo->album_id, $fileName);
         $photo->img_path = env('IMG_DIR') .$photo->album_id .'/'.$fileName;
 
