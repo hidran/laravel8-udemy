@@ -12,9 +12,20 @@ class Photo extends Model
     public function getPathAttribute()
     {
         $url = $this->img_path;
-        if(stristr($url, 'http') === false){
+        if($url && stristr($url, 'http') === false){
             $url = 'storage/'.$url;
         }
         return $url;
+    }
+    public function  getImgPathAttribute($value){
+
+        if($value && stristr($value ,'http') === false){
+            $value = 'storage/'.$value;
+        }
+        return $value;
+    }
+    public function  setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtoupper($value);
     }
 }

@@ -118,8 +118,11 @@ class PhotosController extends Controller
     public function deleteFile(Photo $photo)
     {
         $disk = config('filesystems.default');
-        if($photo->img_path && Storage::disk($disk)->has($photo->img_path)){
-            return   Storage::disk($disk)->delete($photo->img_path);
+        // let's remove the storage string we added in the Model
+        $imgPath = str_replace('storage', '',$photo->img_path);
+        if($imgPath && Storage::disk($disk)->has($imgPath)){
+            // let's remove the storage
+            return   Storage::disk($disk)->delete($imgPath);
         }
         return false;
     }
