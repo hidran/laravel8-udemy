@@ -5,9 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use  Storage;
 class PhotosController extends Controller
 {
+    protected $rules = [
+
+        'album_id' => 'bail|required|integer|exists:albums,id',
+        'name' => 'required',
+        'img_path' => 'bail|required|image'
+    ];
+ protected $messages = [
+     'album_id.required' => 'Il campo album è obbligatorio',
+     'description.required' => 'Il campo Descrizione è obbligatorio',
+     'name.required' => 'Il campo Nome è obbligatorio',
+     'img_path.required' => 'Il campo Immagine è obbligatorio'
+
+ ];
     /**
      * Display a listing of the resource.
      *
@@ -39,6 +53,7 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
+       $this->validate($request, $this->rules, $this->messages);
         $photo = new Photo();
         $photo->name = $request->input('name');
         $photo->description = $request->input('description');
@@ -84,6 +99,8 @@ class PhotosController extends Controller
     public function update(Request $request, Photo $photo)
     {
 
+        unset( $this->rules ['img_path']);
+        $this->validate($request, $this->rules, $this->messages);
         $this->processFile($photo);
         $photo->album_id = $request->input('album_id');
         $photo->name = $request->input('name');

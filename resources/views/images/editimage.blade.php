@@ -12,6 +12,16 @@
             New Image
         @endif
     </h1>
+    @if(count($errors))
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     @if($photo->id)
         <form action="{{route('photos.update', $photo->id)}}" method="POST" enctype="multipart/form-data">
             {{method_field('PATCH')}}
@@ -26,7 +36,7 @@
 
                     </div>
                     <div class="form-group">
-                        <select class="form-field" required name="album_id" id="album_id">
+                        <select class="form-field" name="album_id" id="album_id">
                             <option value="">SELECT</option>
                             @foreach($albums as $item)
                                 <option
