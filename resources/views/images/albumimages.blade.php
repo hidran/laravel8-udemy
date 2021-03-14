@@ -35,7 +35,18 @@
                 </td>
             </tr>
         @endforelse
+        <tr>
+            <td colspan="6">
+                <div class="row">
+                    <div
 
+                        class="col-md-8 offset-md-2 d-flex justify-content-center">
+                        {{$images->links('vendor.pagination.bootstrap-4')}}
+                    </div>
+                </div>
+
+            </td>
+        </tr>
     </table>
 @section('footer')
     @parent

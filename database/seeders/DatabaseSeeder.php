@@ -15,17 +15,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \DB::statement('SET FOREIGN_KEY_CHECKS=0');
-     User::truncate();
-     Album::truncate();
-     Photo::truncate();
- User::factory(20)->has(
-     Album::factory(10)->has(
-         Photo::factory(20)
-     )
- )->create();
-      /*  $this->call(UserSeeder::class);
-        $this->call(AlbumSeeder::class);
-        $this->call(PhotoSeeder::class);
-*/
+        User::truncate();
+        Album::truncate();
+        Photo::truncate();
+        User::factory(200)->has(
+            Album::factory(200)->has(
+                Photo::factory(200)
+            )
+        )->create();
+        /*  $this->call(UserSeeder::class);
+          $this->call(AlbumSeeder::class);
+          $this->call(PhotoSeeder::class);
+  */
     }
 }
