@@ -21,6 +21,7 @@
                     <img width="120" src="{{asset($image->img_path)}}">
                 </td>
                 <td>
+                    <a href="{{route('photos.edit',$image->id)}}" class="btn  btn-sm btn-default">MODIFICA</a>
                     <a href="{{route('photos.destroy',$image->id)}}" class="btn  btn-sm btn-danger">DELETE</a>
                 </td>
             </tr>

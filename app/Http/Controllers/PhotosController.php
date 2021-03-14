@@ -57,7 +57,7 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('images.editimage', compact('photo'));
     }
 
     /**
@@ -67,9 +67,10 @@ class PhotosController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photo $photo)
+    public function update(Request $request,  $photo)
     {
-        //
+     dd($photo);
+
     }
 
     /**
