@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
-
+use  Storage;
 class PhotosController extends Controller
 {
     /**
@@ -80,6 +80,40 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        return +$photo->delete();
+        $res =  $photo->delete();
+        if($res){
+            $this->deleteFile($photo) ;
+        }
+        return ''.$res;
+    }
+    public function processFile(Photo $photo,  Request $req = null )
+    {
+        if(!$req){
+            $req = request();
+        }
+        if(!$req->hasFile('img_path') ){
+            return false;
+        }
+        $file = $req->file('img_path');
+        if(!$file->isValid()){
+            return false;
+        }
+        //$fileName = $file->store(env('ALBUM_THUMB_DIR'));
+        $fileName = $photo->id . '.' . $file->extension();
+        $file->storeAs(env('IMG_DIR').'/'.$photo->album_id, $fileName);
+        $photo->img_path = env('IMG_DIR') .$photo->album_id .'/'.$fileName;
+
+        return  true;
+
+
+
+    }
+    public function deleteFile(Photo $photo)
+    {
+        $disk = config('filesystems.default');
+        if($photo->img_path && Storage::disk($disk)->has($photo->img_path)){
+            return   Storage::disk($disk)->delete($photo->img_path);
+        }
+        return false;
     }
 }
