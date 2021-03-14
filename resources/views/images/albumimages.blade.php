@@ -1,6 +1,9 @@
 @extends('templates.default')
 @section('content')
-
+    <h1>Images for {{$album->album_name}}</h1>
+    @if(session()->has('message'))
+        <x-alert-info>{{ session()->get('message') }}</x-alert-info>
+    @endif
     <table class="table table-striped">
         <tr>
             <th>ID</th>
@@ -18,7 +21,7 @@
                 <td>{{$image->name}}</td>
                 <td>{{$album->album_name}}</td>
                 <td>
-                    <img width="120" src="{{asset($image->img_path)}}">
+                    <img width="120" src="{{asset($image->path)}}">
                 </td>
                 <td>
                     <a href="{{route('photos.edit',$image->id)}}" class="btn  btn-sm btn-default">MODIFICA</a>

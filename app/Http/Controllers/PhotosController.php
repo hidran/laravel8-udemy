@@ -46,7 +46,7 @@ class PhotosController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+       dd($photo);
     }
 
     /**
@@ -67,10 +67,16 @@ class PhotosController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $photo)
+    public function update(Request $request, Photo $photo)
     {
-     dd($photo);
 
+        $this->processFile($photo);
+        $photo->name = $request->input('name');
+        $photo->description = $request->input('description');
+        $res =  $photo->save();
+        $messaggio = $res ? 'Image   ' .  $photo->name . ' Updated' : 'Image ' .   $photo->name . ' was not updated';
+        session()->flash('message', $messaggio);
+        return redirect()->route('albums.images', $photo->album_id);
     }
 
     /**
