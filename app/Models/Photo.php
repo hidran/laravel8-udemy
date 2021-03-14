@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     use HasFactory;
+  protected $fillable =['name','img_path','description'];
 
+    public function album()
+    {
+       return $this->belongsTo(Album::class);
+  }
     public function getPathAttribute()
     {
         $url = $this->img_path;

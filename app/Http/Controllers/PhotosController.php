@@ -27,7 +27,8 @@ class PhotosController extends Controller
     {
         $album = $req->album_id? Album::findOrFail($req->album_id): new Album();
         $photo = new Photo();
-       return view('images.editimage', compact('album','photo'));
+        $albums = $this->getAlbums();
+       return view('images.editimage', compact('album','photo','albums'));
     }
 
     /**
@@ -68,7 +69,9 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('images.editimage', compact('photo'));
+        $albums = $this->getAlbums();
+        $album = $photo->album;
+        return view('images.editimage', compact('photo','albums','album'));
     }
 
     /**
@@ -82,6 +85,7 @@ class PhotosController extends Controller
     {
 
         $this->processFile($photo);
+        $photo->album_id = $request->input('album_id');
         $photo->name = $request->input('name');
         $photo->description = $request->input('description');
         $res =  $photo->save();
@@ -137,5 +141,9 @@ class PhotosController extends Controller
             return   Storage::disk($disk)->delete($imgPath);
         }
         return false;
+    }
+    public function getAlbums()
+    {
+        return Album::orderBy('album_name')->get();
     }
 }
