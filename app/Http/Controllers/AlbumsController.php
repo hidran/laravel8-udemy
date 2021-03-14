@@ -156,8 +156,9 @@ class AlbumsController extends Controller
         return true;
     }
     public function getImages( Album $album){
+      $images=   Photo::wherealbumId($album->id)->get();
+return view('images.albumimages', compact('album','images'));
 
-       return Photo::wherealbumId($album->id)->get();
 
     }
 }
