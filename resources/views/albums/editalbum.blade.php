@@ -6,7 +6,7 @@
 @extends('templates.default')
 @section('content')
     <h1>Edit Album</h1>
-
+    @include('partials.inputerrors')
     <form action="{{route('albums.update',['album' => $album->id])}}" method="POST">
         @csrf
         @method('PATCH')
@@ -16,6 +16,7 @@
             <input type="text" name="album_name" id="album_name" class="form-control" value="{{$album->album_name}}" placeholder="Album name">
 
         </div>
+        @include('albums.partials.fileupload')
         <div class="form-group">
             <label for="">Description</label>
             <textarea  name="description" id="description" class="form-control" placeholder="Album description">{{$album->description}}</textarea>

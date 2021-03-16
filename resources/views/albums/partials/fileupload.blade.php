@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="">Thumbnail</label>
-    <input type="file" name="album_thumb" id="album_thumb" class="form-control" value="{{$album->album_name}}" placeholder="Album name">
+    <input type="file" name="album_thumb" id="album_thumb" class="form-control"  placeholder="Album name">
 
 </div>
 @if($album->album_thumb)

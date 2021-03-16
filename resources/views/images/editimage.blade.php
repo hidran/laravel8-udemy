@@ -12,15 +12,7 @@
             New Image
         @endif
     </h1>
-    @if(count($errors))
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+  @include('partials.inputerrors')
 
     @if($photo->id)
         <form action="{{route('photos.update', $photo->id)}}" method="POST" enctype="multipart/form-data">

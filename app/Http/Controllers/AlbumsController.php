@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlbumRequest;
 use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Http\Request;
@@ -50,11 +51,11 @@ class AlbumsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlbumRequest $request)
     {
 
         $album = new Album();
-        $album->album_name = request()->input('name');
+        $album->album_name = request()->input('album_name');
         $album->album_thumb = '/';
         $album->description = request()->input('description');
         $album->user_id = 1;
@@ -99,10 +100,10 @@ class AlbumsController extends Controller
      * @param \App\Models\Album $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $req, $id)
+    public function update(AlbumRequest $req, $id)
     {
         $album = Album::find($id);
-        $album->album_name = $req->input('name');
+        $album->album_name = $req->input('album_name');
         $album->description = $req->input('description');
         $album->user_id = 1;
         $this->processFile($id, $req, $album);
