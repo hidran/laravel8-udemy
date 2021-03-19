@@ -25,19 +25,20 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('albums.index')}}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('albums.index')}}">Albums</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('albums.create')}}">New Album</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('photos.create')}}">New Image</a>
-            </li>
-
+            @auth
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{route('albums.index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('albums.index')}}">Albums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('albums.create')}}">New Album</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('photos.create')}}">New Image</a>
+                </li>
+            @endauth
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -62,7 +63,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li>
 
-                            <form id="logout-form" action="{{ route('logout')}}" method="POST" >
+                            <form id="logout-form" action="{{ route('logout')}}" method="POST">
                                 {{ csrf_field() }}
                                 <button class="btn btn-default">Logout</button>
                             </form>

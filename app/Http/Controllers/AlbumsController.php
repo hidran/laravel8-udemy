@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AlbumRequest;
 use App\Models\Album;
 use App\Models\Photo;
+use Auth;
 use Illuminate\Http\Request;
 use DB;
 
@@ -19,9 +20,10 @@ class AlbumsController extends Controller
     public function index(Request $request)
     {
 
-
+       ;
         $queryBuilder = Album::orderBy('id', 'DESC')
             ->withCount('photos');
+        $queryBuilder->where('user_id', Auth::id());
         if ($request->has('id')) {
             $queryBuilder->where('id', '=', $request->input('id'));
         }
@@ -58,7 +60,7 @@ class AlbumsController extends Controller
         $album->album_name = request()->input('album_name');
         $album->album_thumb = '/';
         $album->description = request()->input('description');
-        $album->user_id = 1;
+        $album->user_id = Auth::id();
         $res = $album->save();
         if ($res) {
             if ($this->processFile($album->id, $request, $album)) {
@@ -79,7 +81,10 @@ class AlbumsController extends Controller
      */
     public function show(Album $album)
     {
-      return $album;
+        if(+$album->user_id === +Auth::id() ){
+            return $album;
+        }
+       abort(401);
     }
 
     /**

@@ -15,7 +15,12 @@ class AlbumRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        $id = +$this->route()->album;
+        if($id){
+            $album = Album::findOrFail($id);
+            return +$album->user_id === $id;
+        }
+       return true;
     }
 
     /**
