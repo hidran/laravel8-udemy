@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Validator;
 use  Storage;
 class PhotosController extends Controller
 {
+    public function __construct()
+    {
+     $this->middleware('auth');
+    }
+
     protected $rules = [
 
         'album_id' => 'bail|required|integer|exists:albums,id',
