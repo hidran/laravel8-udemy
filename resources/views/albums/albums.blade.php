@@ -5,6 +5,7 @@
     @if(session()->has('message'))
         <x-alert-info>{{ session()->get('message') }}</x-alert-info>
     @endif
+
     <form>
         <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
         <ul class="list-group">

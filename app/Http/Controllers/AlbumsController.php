@@ -21,7 +21,6 @@ class AlbumsController extends Controller
     public function index(Request $request)
     {
 
-       ;
         $queryBuilder = Album::orderBy('id', 'DESC')
             ->withCount('photos');
         $queryBuilder->where('user_id', Auth::id());
@@ -96,6 +95,7 @@ class AlbumsController extends Controller
      */
     public function edit(Album $album)
     {
+
         if(Gate::denies('manage-album', $album)){
             abort(401);
         }
@@ -116,9 +116,13 @@ class AlbumsController extends Controller
     public function update(AlbumRequest $req, $id)
     {
         $album = Album::find($id);
+
+        if(Gate::denies('manage-album', $album)){
+            abort(401);
+        }
         $album->album_name = $req->input('album_name');
         $album->description = $req->input('description');
-        $album->user_id = 1;
+        $album->user_id = Auth::id();
         $this->processFile($id, $req, $album);
 
         $res = $album->save();
@@ -137,6 +141,9 @@ class AlbumsController extends Controller
 
     public function destroy(Album $album)
     {
+        if(Gate::denies('manage-album', $album)){
+            abort(401);
+        }
         $thumbNail = $album->album_thumb;
        $res = $album->delete();
         if($res && $thumbNail && \Storage::exists($thumbNail)){
