@@ -2,7 +2,7 @@
 @section('content')
     <h1>New Album</h1>
     @include('partials.inputerrors')
-    <form action="{{route('albums.store')}}" method="POST">
+    <form action="{{route('albums.store')}}" method="POST"  enctype="multipart/form-data">
         {{csrf_field()}}
 
         <div class="form-group">

@@ -8,6 +8,7 @@ use App\Models\Photo;
 use Auth;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Gate;
 
 class AlbumsController extends Controller
 {
@@ -95,6 +96,13 @@ class AlbumsController extends Controller
      */
     public function edit(Album $album)
     {
+        if(Gate::denies('manage-album', $album)){
+            abort(401);
+        }
+
+//        if($album->user_id !== Auth::id()){
+//            abort(401);
+//        }
           return view('albums.editalbum')->withAlbum($album);
     }
 

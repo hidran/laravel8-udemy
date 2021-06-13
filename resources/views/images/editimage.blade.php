@@ -9,7 +9,7 @@
         @if($photo->id)
             Update {{$photo->name}}
         @else
-            New Image
+            New Image 2
         @endif
     </h1>
   @include('partials.inputerrors')
