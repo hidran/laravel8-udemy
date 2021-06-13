@@ -9,7 +9,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/albums', AlbumsController::class)->middleware('auth');
-    Route::get('/albums/{album}/images', [AlbumsController::class,'getImages'])->name('albums.images');
+    Route::get('/albums/{album}/images', [AlbumsController::class,'getImages'])->name('albums.images')
+        ->middleware('can:view,album');
     Route::resource('photos', PhotosController::class);
 });
 
