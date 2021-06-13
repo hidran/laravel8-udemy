@@ -15,14 +15,7 @@ class AlbumRequest extends FormRequest
      */
     public function authorize()
     {
-        $albumId =$this->route()->album;
-        if(!$albumId){
-            return 1;
-        }
-      $album = Album::findOrFail($albumId);
-        if(Gate::denies('manage-album', $album)){
-           return false;
-        }
+
         return true;
     }
 

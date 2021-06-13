@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Gate;
 
 class AlbumsController extends Controller
 {
+    public function __construct()
+    {
+     //   $this->authorizeResource(Album::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +61,6 @@ class AlbumsController extends Controller
     public function store(AlbumRequest $request)
     {
 
-        $this->authorize(Album::class);
         $album = new Album();
         $album->album_name = request()->input('album_name');
         $album->album_thumb = '/';
@@ -82,10 +86,9 @@ class AlbumsController extends Controller
      */
     public function show(Album $album)
     {
-        if(+$album->user_id === +Auth::id() ){
+
             return $album;
-        }
-       abort(401);
+
     }
 
     /**
@@ -97,11 +100,7 @@ class AlbumsController extends Controller
     public function edit(Album $album)
     {
 
-     $this->authorize($album);
 
-//        if($album->user_id !== Auth::id()){
-//            abort(401);
-//        }
           return view('albums.editalbum')->withAlbum($album);
     }
 
@@ -112,15 +111,14 @@ class AlbumsController extends Controller
      * @param \App\Models\Album $album
      * @return \Illuminate\Http\Response
      */
-    public function update(AlbumRequest $req, $id)
+    public function update(AlbumRequest $req, Album $album)
     {
-        $album = Album::find($id);
 
-        $this->authorize($album);
+
         $album->album_name = $req->input('album_name');
         $album->description = $req->input('description');
         $album->user_id = Auth::id();
-        $this->processFile($id, $req, $album);
+        $this->processFile($album->id, $req, $album);
 
         $res = $album->save();
         $messaggio = $res ? 'Album con nome = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
@@ -138,7 +136,7 @@ class AlbumsController extends Controller
 
     public function destroy(Album $album)
     {
-        $this->authorize($album);
+
         $thumbNail = $album->album_thumb;
        $res = $album->delete();
         if($res && $thumbNail && \Storage::exists($thumbNail)){

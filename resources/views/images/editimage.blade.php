@@ -9,10 +9,10 @@
         @if($photo->id)
             Update {{$photo->name}}
         @else
-            New Image 2
+            New Image
         @endif
     </h1>
-  @include('partials.inputerrors')
+    @include('partials.inputerrors')
 
     @if($photo->id)
         <form action="{{route('photos.update', $photo->id)}}" method="POST" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
             @else
                 <form action="{{route('photos.store')}}" method="POST" enctype="multipart/form-data">
                     @endif
-                    {{csrf_field()}}
+                    @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" value="{{$photo->name}}"

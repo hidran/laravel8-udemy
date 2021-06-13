@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use  Storage;
 class PhotosController extends Controller
@@ -12,6 +13,7 @@ class PhotosController extends Controller
     public function __construct()
     {
      $this->middleware('auth');
+     $this->authorizeResource(Photo::class);
     }
 
     protected $rules = [
@@ -166,6 +168,6 @@ class PhotosController extends Controller
     }
     public function getAlbums()
     {
-        return Album::orderBy('album_name')->get();
+        return Album::whereUserId(Auth::id())->orderBy('album_name')->get();
     }
 }

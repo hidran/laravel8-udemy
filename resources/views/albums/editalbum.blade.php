@@ -10,7 +10,7 @@
     <form action="{{route('albums.update',['album' => $album->id])}}" method="POST"  enctype="multipart/form-data">
         @csrf
         @method('PATCH')
-         <input type="hidden" name="_method" value="PATCH">
+
         <div class="form-group">
             <label for="">Name</label>
             <input type="text" name="album_name" id="album_name" class="form-control" value="{{$album->album_name}}" placeholder="Album name">

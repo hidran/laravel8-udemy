@@ -18,7 +18,7 @@ class AlbumPolicy
      */
     public function viewAny(User $user)
     {
-        //
+       return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class AlbumPolicy
      */
     public function create(User $user)
     {
-        return 1;
+        return true;
     }
 
     /**
@@ -53,6 +53,7 @@ class AlbumPolicy
      */
     public function update(User $user, Album $album)
     {
+
 
         return $user->id === $album->user_id;
     }
@@ -78,6 +79,7 @@ class AlbumPolicy
      */
     public function restore(User $user, Album $album)
     {
+
         return $user->id === $album->user_id;
     }
 
