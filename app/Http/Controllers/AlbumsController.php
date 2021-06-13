@@ -56,6 +56,7 @@ class AlbumsController extends Controller
     public function store(AlbumRequest $request)
     {
 
+        $this->authorize(Album::class);
         $album = new Album();
         $album->album_name = request()->input('album_name');
         $album->album_thumb = '/';
@@ -96,9 +97,7 @@ class AlbumsController extends Controller
     public function edit(Album $album)
     {
 
-        if(Gate::denies('manage-album', $album)){
-            abort(401);
-        }
+     $this->authorize($album);
 
 //        if($album->user_id !== Auth::id()){
 //            abort(401);
@@ -117,9 +116,7 @@ class AlbumsController extends Controller
     {
         $album = Album::find($id);
 
-        if(Gate::denies('manage-album', $album)){
-            abort(401);
-        }
+        $this->authorize($album);
         $album->album_name = $req->input('album_name');
         $album->description = $req->input('description');
         $album->user_id = Auth::id();
@@ -141,9 +138,7 @@ class AlbumsController extends Controller
 
     public function destroy(Album $album)
     {
-        if(Gate::denies('manage-album', $album)){
-            abort(401);
-        }
+        $this->authorize($album);
         $thumbNail = $album->album_thumb;
        $res = $album->delete();
         if($res && $thumbNail && \Storage::exists($thumbNail)){
