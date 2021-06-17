@@ -8,24 +8,40 @@
 
     <form>
         <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
-        <ul class="list-group">
+        <table class="table table-striped table-dark albums">
+            <thead>
+            <tr class="align-middle">
+                <th>Album name</th>
+                <th>Thumb</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
             @foreach($albums as $album)
-                <li class="list-group-item d-flex justify-content-between">
-                    ({{$album->id}}) {{$album->album_name}}
-                    @if($album->album_thumb)
-                        <img width="300" src="{{asset($album->path)}}" title="{{$album->album_name}}"
+                <tr  class="align-middle">
+                   <td>({{$album->id}}) {{$album->album_name}}</td>
+                    <td>
+                @if($album->album_thumb)
+                        <img width="120" src="{{asset($album->path)}}" title="{{$album->album_name}}"
                              alt="{{$album->album_name}}">
 
                     @endif
-                    <div>
-                        <a href="{{route('photos.create')}}?album_id={{$album->id}}" class="btn btn-primary">NEW IMAGE</a>
-                        <a href="{{route('albums.images',$album)}}" class="btn btn-primary">VIEW IMAGES ({{$album->photos_count}})</a>
-                        <a href="{{route('albums.edit',$album)}}" class="btn btn-primary">UPDATE</a>
-                        <a href="{{route('albums.destroy',$album)}}" class="btn btn-danger">DELETE</a>
-                    </div>
-                </li>
+                    </td>
+                    <td>{{$album->user->name}}</td>
+                    <td>{{$album->created_at->format('d/m/Y H:i')}}</td>
+                    <td>
+                        <a title="Add new image" href="{{route('photos.create')}}?album_id={{$album->id}}" class="btn btn-primary">
+                            <i class="bi bi-plus-circle"></i>
+                        </a>
+                        <a title="View images" href="{{route('albums.images',$album)}}" class="btn btn-primary">   <i class="bi bi-zoom-in"></i> ({{$album->photos_count}})</a>
+                        <a href="{{route('albums.edit',$album)}}" class="btn btn-primary">   <i class="bi bi-pen"></i></a>
+                        <a href="{{route('albums.destroy',$album)}}" class="btn btn-danger">   <i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
             @endforeach
-            <li>
+            <tr>
+                <td colspan="5">
                 <div class="row">
                     <div
 
@@ -33,8 +49,9 @@
                         {{$albums->links('vendor.pagination.bootstrap-4')}}
                     </div>
                 </div>
-            </li>
-        </ul>
+                </td>
+            </tr>
+        </table>
     </form>
 @endsection
 @section('footer')
