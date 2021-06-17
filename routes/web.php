@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, PhotosController};
 
 Route::get('/', function () {
-    return redirect()->route('albums.index');
+    return redirect()->route('dashboard');
 });
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
+
     Route::resource('/albums', AlbumsController::class)->middleware('auth');
     Route::get('/albums/{album}/images', [AlbumsController::class,'getImages'])->name('albums.images')
         ->middleware('can:view,album');

@@ -41,7 +41,7 @@ class PhotoPolicy
      */
     public function create(User $user)
     {
-        //
+        return 1;
     }
 
     /**
