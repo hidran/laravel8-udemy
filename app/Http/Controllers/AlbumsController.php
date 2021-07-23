@@ -14,7 +14,7 @@ class AlbumsController extends Controller
 {
     public function __construct()
     {
-     //   $this->authorizeResource(Album::class);
+        //   $this->authorizeResource(Album::class);
     }
 
     /**
@@ -36,7 +36,7 @@ class AlbumsController extends Controller
             $queryBuilder->where('album_name', 'like', $request->input('album_name') . '%');
         }
 
-        $albums = $queryBuilder->paginate( env('IMAGE_PER_PAGE',20));
+        $albums = $queryBuilder->paginate(env('IMAGE_PER_PAGE', 20));
 
         return view('albums.albums', ['albums' => $albums]);
     }
@@ -87,7 +87,7 @@ class AlbumsController extends Controller
     public function show(Album $album)
     {
 
-            return $album;
+        return $album;
 
     }
 
@@ -101,7 +101,7 @@ class AlbumsController extends Controller
     {
 
 
-          return view('albums.editalbum')->withAlbum($album);
+        return view('albums.editalbum')->withAlbum($album);
     }
 
     /**
@@ -134,15 +134,20 @@ class AlbumsController extends Controller
      */
 
 
-    public function destroy(Album $album)
+    public function destroy(Album $album, Request $req)
     {
 
         $thumbNail = $album->album_thumb;
-       $res = $album->delete();
-        if($res && $thumbNail && \Storage::exists($thumbNail)){
+        $res = $album->delete();
+        if ($res && $thumbNail && \Storage::exists($thumbNail)) {
             \Storage::delete($thumbNail);
         }
-         return $res;
+
+       if($req->ajax()){
+           return $res;
+       }
+       session()->flash('message', 'Album ' . $album->album_name . ' deleted!');
+        return redirect()->route('albums.index');
 
     }
 
@@ -169,10 +174,12 @@ class AlbumsController extends Controller
         $album->album_thumb = $filename;
         return true;
     }
-    public function getImages( Album $album){
 
-      $images=   Photo::wherealbumId($album->id)->latest()->paginate( env('IMAGE_PER_PAGE',20));
-return view('images.albumimages', compact('album','images'));
+    public function getImages(Album $album)
+    {
+
+        $images = Photo::wherealbumId($album->id)->latest()->paginate(env('IMAGE_PER_PAGE', 20));
+        return view('images.albumimages', compact('album', 'images'));
 
 
     }
