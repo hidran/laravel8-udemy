@@ -19,9 +19,13 @@
         @include('albums.partials.fileupload')
         <div class="form-group">
             <label for="">Description</label>
-            <textarea  name="description" id="description" class="form-control" placeholder="Album description">{{$album->description}}</textarea>
+            <textarea  name="description" id="description"  class="form-control" placeholder="Album description">{{$album->description}}</textarea>
 
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-flex justify-content-end border">
+        <button type="submit" class="btn btn-primary mx-1">Submit</button>
+        <a href="{{route('albums.index')}}" class="btn btn-outline-info  mx-1">Back</a>
+        <a href="{{route('albums.images', $album->id)}}" class="btn btn-outline-success  mx-1">Images</a>
+        </div>
     </form>
 @stop

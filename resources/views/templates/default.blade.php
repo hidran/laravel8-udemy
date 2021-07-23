@@ -7,8 +7,8 @@
     <meta name="author" content="Hidran Arias">
     <meta name="generator" content="phpstorm">
     <title>@yield('title', 'Home')</title>
-   <link rel="stylesheet" href="/css/app.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Fonts -->
@@ -17,60 +17,66 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
         table.albums td a.btn {
-            width:80px;
-            border : 0px solid red;
+            width: 100px;
+            border: 0px solid red;
+        }
+        .editbuttons .btn {
+           width: 120px;
         }
     </style>
 </head>
 <body class="pt-24">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gallery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-            @auth
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{route('albums.index')}}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('albums.index')}}">Albums</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('albums.create')}}">New Album</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('photos.create')}}">New Image</a>
-                </li>
-            @endauth
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                @auth
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('albums.index')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('albums.index')}}">Albums</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('albums.create')}}">New Album</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('photos.create')}}">New Image</a>
+                    </li>
+                @endauth
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
             @guest
-                <li>
-                    <a class="nav-link" href="{{route('login')}}">Login</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="{{route('register')}}">Register</a>
-                </li>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{route('register')}}">Register</a>
+                    </li>
+
+                </ul>
             @endguest
             @auth
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle  nav-link" data-toggle="dropdown" role="button"
-                       aria-expanded="false">
+                <div class="dropdown ms-4">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li>
-
                             <form id="logout-form" action="{{ route('logout')}}" method="POST">
                                 {{ csrf_field() }}
                                 <button class="btn btn-default">Logout</button>
@@ -78,9 +84,11 @@
                         </li>
 
                     </ul>
-                </li>
+                </div>
+
             @endauth
-        </ul>
+
+        </div>
     </div>
 </nav>
 
