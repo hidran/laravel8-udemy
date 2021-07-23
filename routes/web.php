@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AlbumsController, PhotosController};
+use App\Http\Controllers\{AlbumsController, GalleryController, PhotosController};
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// gallery
+Route::group(['prefix' => 'gallery'], function (){
+    Route::get('/',  [GalleryController::class, 'index']);
+    Route::get('albums', [GalleryController::class, 'index']);
+});
 require __DIR__.'/auth.php';
