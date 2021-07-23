@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, GalleryController, PhotosController};
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route('gallery.index');
 });
 
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 
 // gallery
 Route::group(['prefix' => 'gallery'], function (){
-    Route::get('/',  [GalleryController::class, 'index']);
+    Route::get('/',  [GalleryController::class, 'index'])->name('gallery.index');
     Route::get('albums', [GalleryController::class, 'index']);
     Route::get('album/{album}/images',  [GalleryController::class, 'showAlbumImages'])->name('gallery.album.images');
 });
