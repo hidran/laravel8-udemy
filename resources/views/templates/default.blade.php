@@ -107,7 +107,7 @@
             'resizeDuration': 200,
             'wrapAround': true
         })
-    </script
+    </script>
 @show
 </body>
 </html>

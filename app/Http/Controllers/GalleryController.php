@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Album;
-use App\Models\Photo;
+use App\Models\{Album,Category,Photo};
+
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
     public function index()
     {
-        $albums =  Album::with('categories')->get()->toArray();
+      //  \DB::enableQueryLog();
+        $albums =  Album::with('categories')->latest()->paginate(50);
 
-        return view('gallery.albums')->with('albums',$albums->paginate(50));
+        return view('gallery.albums')->with('albums',$albums);
     }
 
     public function showAlbumImages(Album $album)
@@ -22,5 +23,11 @@ class GalleryController extends Controller
                'album' => $album
                ]
        );
+    }
+
+    public function showCategoryAlbums(Category $category)
+    {
+
+        return view('gallery.albums')->with('albums', $category->albums()->with('categories')->latest()->paginate(50));
     }
 }
