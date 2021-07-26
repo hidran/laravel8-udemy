@@ -12,6 +12,16 @@
         </div>
         @include('albums.partials.fileupload')
         <div class="form-group">
+            <label for="">Categories</label>
+            <select   name="categories[]" id="categories" class="form-control" multiple>
+                @foreach($categories as $cat)
+                    <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                @endforeach
+            </select>
+
+        </div>
+
+        <div class="form-group">
             <label for="">Description</label>
             <textarea  name="description" id="description" class="form-control" placeholder="Album description">{{old('description')}}</textarea>
 

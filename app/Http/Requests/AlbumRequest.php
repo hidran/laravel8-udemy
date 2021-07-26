@@ -32,7 +32,7 @@ class AlbumRequest extends FormRequest
         $ret = [
             'album_name' => ['required'],
 
-            'description' => 'required',
+          //  'description' => 'required',
 
             //'user_id'
         ];
