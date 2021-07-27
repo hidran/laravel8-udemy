@@ -130,6 +130,7 @@ class AlbumsController extends Controller
         $res = $album->save();
         if($req->has('categories')){
             $album->categories()->sync($req->input('categories'));
+
         }
         $messaggio = $res ? 'Album con nome = ' . $album->album_name . ' Aggiornato' : 'Album ' . $album->album_name . ' Non aggiornato';
         session()->flash('message', $messaggio);
@@ -150,6 +151,8 @@ class AlbumsController extends Controller
         $thumbNail = $album->album_thumb;
         $res = $album->delete();
         if ($res && $thumbNail && \Storage::exists($thumbNail)) {
+            // no need to as there is ondelete cascade
+           // $album->categories()->detach($album->categories->pluck('id'));
             \Storage::delete($thumbNail);
         }
 

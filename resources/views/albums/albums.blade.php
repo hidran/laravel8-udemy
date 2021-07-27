@@ -70,7 +70,7 @@
             </tr>
         @endforeach
         <tr>
-            <td colspan="5">
+            <td colspan="6">
                 <div class="row">
                     <div
 
