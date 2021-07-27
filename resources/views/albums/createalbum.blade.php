@@ -11,15 +11,9 @@
 
         </div>
         @include('albums.partials.fileupload')
-        <div class="form-group">
-            <label for="">Categories</label>
-            <select   name="categories[]" id="categories" class="form-control" multiple>
-                @foreach($categories as $cat)
-                    <option value="{{$cat->id}}">{{$cat->category_name}}</option>
-                @endforeach
-            </select>
+        @include('albums.partials.category_combo')
 
-        </div>
+
 
         <div class="form-group">
             <label for="">Description</label>

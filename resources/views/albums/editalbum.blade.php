@@ -22,6 +22,7 @@
             <textarea  name="description" id="description"  class="form-control" placeholder="Album description">{{$album->description}}</textarea>
 
         </div>
+        @include('albums.partials.category_combo')
         <div class="d-flex justify-content-end border">
         <button type="submit" class="btn btn-primary mx-1">Submit</button>
         <a href="{{route('albums.index')}}" class="btn btn-outline-info  mx-1">Back</a>
