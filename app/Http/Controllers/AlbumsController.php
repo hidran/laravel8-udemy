@@ -8,6 +8,7 @@ use App\Models\AlbumCategory;
 use App\Models\Category;
 use App\Models\Photo;
 use Auth;
+use Doctrine\DBAL\Query\QueryBuilder;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Gate;
@@ -36,6 +37,11 @@ class AlbumsController extends Controller
         }
         if ($request->has('album_name')) {
             $queryBuilder->where('album_name', 'like', $request->input('album_name') . '%');
+        }
+        if ($request->has('category_id')) {
+            $queryBuilder->whereHas('categories', fn( $q) => $q->where('category_id',$request->category_id)) ;
+
+
         }
 
         $albums = $queryBuilder->paginate(env('IMAGE_PER_PAGE', 20));

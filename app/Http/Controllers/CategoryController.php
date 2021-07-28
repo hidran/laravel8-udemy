@@ -25,8 +25,8 @@ class CategoryController extends Controller
        // $categories =auth()->user()->categories()->paginate(10);
 
         $categories = Category::getCategoriesByUserId(auth()->user())->paginate(10);
-
-       return view('categories.index', compact('categories'));
+        $category = new Category();
+       return view('categories.index', compact('categories', 'category'));
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->rules);
+        $this->validate($request, $this->rules,$this->messages);
       $res =  Category::create([
            'category_name' => $request->category_name,
            'user_id' => auth()->id()
@@ -83,7 +83,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.create')->withCategory($category);
     }
 
     /**
@@ -95,7 +95,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request, $this->rules, $this->messages);
+         $category->category_name = $request->category_name;
+        $res = $category->save();
+        $message = $res ? 'Category deleted' : 'Problem deleting category';
+        session()->flash('messages', $message);
+        if($request->ajax()){
+            return [
+                'message' => $message,
+                'success' => $res
+            ];
+        }
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -104,8 +115,17 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, Request $request)
     {
-        //
+        $res = $category->delete();
+        $message = $res ? 'Category deleted' : 'Problem deleting category';
+        session()->flash('messages', $message);
+        if($request->ajax()){
+            return [
+                'message' => $message,
+                'success' => $res
+            ];
+        }
+        return redirect()->route('categories.index');
     }
 }
