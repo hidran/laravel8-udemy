@@ -76,4 +76,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Album::class);
     }
+    public function categories()
+    {
+        return $this->hasMany(Category::class)->withCount('albums')->orderBy('category_name');
+    }
 }
