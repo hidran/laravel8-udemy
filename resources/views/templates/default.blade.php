@@ -51,6 +51,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('photos.create')}}">New Image</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('categories.index')}}">Categories</a>
+                    </li>
                 @endauth
             </ul>
             <form class="d-flex">

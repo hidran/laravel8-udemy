@@ -34,6 +34,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Album whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Album whereUserId($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categories
+ * @property-read int|null $categories_count
+ * @property-read \App\Models\User $user
  */
 class Album extends Model
 {
