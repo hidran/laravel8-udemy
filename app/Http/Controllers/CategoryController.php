@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    protected $rules = [
+        'category_name' => 'required',
+
+    ];
+
+    protected $messages = [
+        'category_name.required' => 'Field name is required'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +36,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $category = new Category();
+      return view('categories.create')->withCategory($category);
     }
 
     /**
@@ -39,7 +48,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, $this->rules);
+      $res =  Category::create([
+           'category_name' => $request->category_name,
+           'user_id' => auth()->id()
+       ]);
+      $message = $res ? 'Category created' : 'Problem creating category';
+      session()->flash('messages', $message);
+      if($request->ajax()){
+          return [
+              'message' => $message,
+              'success' => $res
+          ];
+      }
+      return redirect()->route('categories.index');
     }
 
     /**

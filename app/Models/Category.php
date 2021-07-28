@@ -34,6 +34,7 @@ class Category extends Model
     use HasFactory;
 
     //protected $with = ['albums'];
+    protected $fillable = ['category_name', 'user_id'];
 
     public function albums()
     {
