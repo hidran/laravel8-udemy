@@ -128,6 +128,7 @@
             });
             // update category ajax
             // add Category ajax
+
             $('#categoryList a.btn-outline-info').on('click',function (ele) {
 
                 ele.preventDefault();
@@ -140,7 +141,16 @@
                 var tdCat =$('#catid-' + categoryId);
                 var category_name = tdCat.text();
                 var f = $('#manageCategoryForm');
-               console.log(f);
+                f.attr('action',urlUpdate);
+                f[0].category_name.value = category_name;
+                f[0].category_name.addEventListener('keyup', function(){
+                    tdCat.text( f[0].category_name.value);
+                });
+                var input = document.createElement('input');
+                input.name ='_method';
+                input.type ="hidden";
+                input.value = 'PATCH';
+                f[0].appendChild(input);
             });
         });
 
