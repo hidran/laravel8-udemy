@@ -101,7 +101,7 @@ class CategoryController extends Controller
         $res = $category->save();
         $message = $res ? 'Category updated' : 'Problem updating category '.$request->category_name;
         session()->flash('messages', $message);
-        if($request->ajax()){
+        if($request->expectsJson()){
             return [
                 'message' => $message,
                 'success' => $res
