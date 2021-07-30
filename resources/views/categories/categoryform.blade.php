@@ -1,10 +1,10 @@
 @if($category->category_name)
     <h2>Modify category</h2>
-    <form action="{{route('categories.update', $category->id)}}" method="post" class="row">
+    <form id="manageCategoryForm" action="{{route('categories.update', $category->id)}}" method="post" class="row">
         @method('patch')
         @else
             <h2>Create new category</h2>
-            <form action="{{route('categories.store')}}" method="post" class="row">
+            <form  id="manageCategoryForm"  action="{{route('categories.store')}}" method="post" class="row">
 
                 @endif
 
