@@ -25,6 +25,9 @@
            width: 120px;
         }
     </style>
+  <script>
+    window.Laravel =@json( ['csrf_token' => csrf_token()] )
+        </script>
 </head>
 <body class="pt-24">
 

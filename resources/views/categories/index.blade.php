@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             @forelse( $categories as $cat)
-                <tr>
+                <tr id="tr-{{$cat->id}}">
                     <td>{{$cat->id}}</td>
                     <td>{{$cat->category_name}}</td>
                     <td>{{$cat->created_at->format('Y-m-d H:i')}}</td>
@@ -40,7 +40,7 @@
                         <form action="{{route('categories.destroy', $cat->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger  m-1" title="DELETE CATEGORY"><i class="bi bi-trash"></i> </button>
+                            <button id="btnDelete-{{$cat->id}}" class="btn btn-danger  m-1" title="DELETE CATEGORY"><i class="bi bi-trash"></i> </button>
                         </form>
                     </td>
                 </tr>
@@ -55,7 +55,7 @@
                 </tbody>
                 <tfoot>
                 <tr class="">
-                    <th colspan="5">{{$categories->links('vendor.pagination.bootstrap-4')}}</th>
+                    <th colspan="6">{{$categories->links('vendor.pagination.bootstrap-4')}}</th>
                 </tr>
                 </tfoot>
         </table>
@@ -64,4 +64,20 @@
         @include('categories.categoryform')
     </div>
 </div>
+@endsection
+@section('footer')
+    @parent
+    <script>
+        $('document').ready(function () {
+            $('div.alert').fadeOut(5000);
+            $('form .btn-danger ').on('click',function (evt) {
+                alert('clicked')
+                console.log(evt)
+                evt.preventDefault();
+                console.log(this)
+
+
+            });
+        });
+    </script>
 @endsection
