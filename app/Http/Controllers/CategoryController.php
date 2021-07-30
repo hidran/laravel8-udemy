@@ -120,7 +120,7 @@ class CategoryController extends Controller
         $res = $category->delete();
         $message = $res ? 'Category deleted' : 'Problem deleting category';
         session()->flash('messages', $message);
-        if($request->ajax()){
+        if($request->expectsJson()){
             return [
                 'message' => $message,
                 'success' => $res
