@@ -18,7 +18,7 @@ class VerifyIsAdmin
     {
         if(!Auth::user()->isAdmin()){
 
-            abort(401);
+           return redirect()->route('login');
         }
         return $next($request);
     }
