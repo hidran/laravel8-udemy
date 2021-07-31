@@ -45,7 +45,7 @@ class Category extends Model
         return $this->belongsTo(User::class);
     }
     public function scopeGetCategoriesByUserId(Builder $builder, User $user){
-        $builder->whereUserId($user->id)->withCount('albums')->orderBy('category_name');
+        $builder->whereUserId($user->id)->withCount('albums')->latest();
     }
 
 }
