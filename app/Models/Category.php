@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUserId($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\User $user
+ * @method static Builder|Category getCategoriesByUserId(\App\Models\User $user)
  */
 class Category extends Model
 {
