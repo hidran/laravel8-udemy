@@ -90,4 +90,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Category::class)->withCount('albums')->orderBy('category_name');
     }
+
+    public function isAdmin()
+    {
+        return 'admin' === $this->user_role;
+    }
 }
