@@ -50,6 +50,7 @@ use App\Models\Album;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable, SoftDeletes;
+ protected $dateFormat =' Y-m-d H:i';
 
     //protected $table ='users';
     /**
