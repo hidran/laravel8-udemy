@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\TestEmail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, CategoryController, GalleryController, PhotosController};
 
@@ -32,3 +33,8 @@ Route::group(['prefix' => 'gallery'], function (){
 
 
 require __DIR__.'/auth.php';
+
+// mail
+Route::get('testMail', function () {
+    Mail::to('hidran@gmail.com')->send(new TestEmail());
+});
