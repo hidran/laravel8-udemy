@@ -1,6 +1,8 @@
 <?php
 
 use App\Mail\TestEmail;
+use App\Mail\TestMd;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, CategoryController, GalleryController, PhotosController};
 
@@ -35,6 +37,8 @@ Route::group(['prefix' => 'gallery'], function (){
 require __DIR__.'/auth.php';
 
 // mail
-Route::get('testMail', function () {
-    Mail::to('hidran@gmail.com')->send(new TestEmail());
+Route::get('testMail',function (){
+    $user = User::get()->first();
+
+    Mail::to($user->email)->send(new TestMd($user));
 });
