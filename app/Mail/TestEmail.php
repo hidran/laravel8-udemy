@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use http\Client\Curl\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -28,7 +29,7 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        $data = print_r($this->event,1);
-        return $this->view('mails.testemail')->with(compact('data'));
+        $user = User::first();
+        return $this->view('mails.testemail')->with($user);
     }
 }

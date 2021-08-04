@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewAlbumCreated;
 use App\Http\Requests\AlbumRequest;
 use App\Models\Album;
 use App\Models\AlbumCategory;
@@ -78,6 +79,7 @@ class AlbumsController extends Controller
         $album->user_id = Auth::id();
         $res = $album->save();
         if ($res) {
+            event(new NewAlbumCreated($album));
             if($request->has('categories')){
                 $album->categories()->attach($request->input('categories'));
             }
