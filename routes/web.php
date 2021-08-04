@@ -1,7 +1,9 @@
 <?php
 
+use App\Events\NewAlbumCreated;
 use App\Mail\TestEmail;
 use App\Mail\TestMd;
+use App\Models\Album;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, CategoryController, GalleryController, PhotosController};
@@ -41,4 +43,10 @@ Route::get('testMail',function (){
     $user = User::get()->first();
 
     Mail::to($user->email)->send(new TestMd($user));
+});
+//
+// event
+Route::get('testEvent',function (){
+    $album =Album::first();
+      event(new NewAlbumCreated($album));
 });
